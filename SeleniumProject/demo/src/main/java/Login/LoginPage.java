@@ -4,6 +4,7 @@ import Base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -15,6 +16,7 @@ public class LoginPage {
     private final By submitButton=By.xpath("//button[@type='submit']");
     private final By loginError=By.xpath("//p[text()='Your email or password is incorrect!']");
     private final By logOut=By.xpath("//a[text()=' Logout']");
+
     public void getLoginPage(){
         BaseClass.getDriver().findElement(loginOption).click();
     }
@@ -43,4 +45,5 @@ public class LoginPage {
         WebDriverWait wait=new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(10));
         return BaseClass.getDriver().findElement(loginOption).isDisplayed();
     }
+
 }
