@@ -20,6 +20,8 @@ public class Navigation {
     private final By allMenu=By.cssSelector("ul.navbar-nav > li > a");
     private final By navBar=By.cssSelector("ul.navbar-nav");
     private final By mainContent=By.cssSelector("section#slider");
+    private final By dropdowns=By.cssSelector("ul.navbar-nav li.dropdown");
+    private final By navbar=By.xpath("//div[@class='shop-menu pull-right']");
 
     public WebElement getHomePageNavigationMenu(){
         return BaseClass.getDriver().findElement(homePageNavigationMenu);
@@ -58,6 +60,12 @@ public class Navigation {
     }
     public WebElement getMainContent(){
         return BaseClass.getDriver().findElement(mainContent);
+    }
+    public List<WebElement>getAllDropDown(){
+        return BaseClass.getDriver().findElements(dropdowns);
+    }
+    public List<WebElement>getAllNavbar(){
+        return BaseClass.getDriver().findElements(navbar);
     }
 
 }
